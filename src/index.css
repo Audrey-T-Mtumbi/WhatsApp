@@ -2,39 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* WhatsApp Design System - Authentic colors and tokens */
 
 @layer base {
   :root {
+    /* WhatsApp signature colors */
+    --whatsapp-green: 142 70% 49%;
+    --whatsapp-green-dark: 142 70% 42%;
+    --whatsapp-green-light: 142 50% 96%;
+    --whatsapp-teal: 174 55% 45%;
+    
+    /* Background colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --chat-background: 219 20% 95%;
+    --sidebar-background: 0 0% 100%;
+    --message-background: 219 20% 95%;
+    
+    /* Text colors */
+    --foreground: 0 0% 13%;
+    --text-secondary: 0 0% 40%;
+    --text-muted: 0 0% 60%;
+    --text-light: 0 0% 100%;
+    
+    /* Message bubbles */
+    --message-incoming: 0 0% 100%;
+    --message-outgoing: 142 50% 96%;
+    --message-hover: 0 0% 96%;
+    
+    /* UI Elements */
+    --border: 0 0% 90%;
+    --border-light: 0 0% 95%;
+    --divider: 0 0% 85%;
+    --hover: 0 0% 96%;
+    --active: 142 50% 96%;
+    
+    /* Status colors */
+    --online: 142 70% 49%;
+    --away: 38 92% 50%;
+    --offline: 0 0% 60%;
+    
+    /* Chat specific */
+    --chat-header: 213 30% 93%;
+    --input-background: 0 0% 100%;
+    --timestamp: 0 0% 60%;
 
     --radius: 0.5rem;
 

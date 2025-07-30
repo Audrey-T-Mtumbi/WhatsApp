@@ -19,39 +19,45 @@ export default {
 		},
 		extend: {
 			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
+				// WhatsApp color system
+				'whatsapp-green': 'hsl(var(--whatsapp-green))',
+				'whatsapp-green-dark': 'hsl(var(--whatsapp-green-dark))',
+				'whatsapp-green-light': 'hsl(var(--whatsapp-green-light))',
+				'whatsapp-teal': 'hsl(var(--whatsapp-teal))',
+				
+				// Backgrounds
 				background: 'hsl(var(--background))',
+				'chat-background': 'hsl(var(--chat-background))',
+				'sidebar-background': 'hsl(var(--sidebar-background))',
+				'message-background': 'hsl(var(--message-background))',
+				
+				// Text colors
 				foreground: 'hsl(var(--foreground))',
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
-				},
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
-				},
-				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				},
+				'text-secondary': 'hsl(var(--text-secondary))',
+				'text-muted': 'hsl(var(--text-muted))',
+				'text-light': 'hsl(var(--text-light))',
+				
+				// Message bubbles
+				'message-incoming': 'hsl(var(--message-incoming))',
+				'message-outgoing': 'hsl(var(--message-outgoing))',
+				'message-hover': 'hsl(var(--message-hover))',
+				
+				// UI Elements
+				border: 'hsl(var(--border))',
+				'border-light': 'hsl(var(--border-light))',
+				divider: 'hsl(var(--divider))',
+				hover: 'hsl(var(--hover))',
+				active: 'hsl(var(--active))',
+				
+				// Status colors
+				online: 'hsl(var(--online))',
+				away: 'hsl(var(--away))',
+				offline: 'hsl(var(--offline))',
+				
+				// Chat specific
+				'chat-header': 'hsl(var(--chat-header))',
+				'input-background': 'hsl(var(--input-background))',
+				timestamp: 'hsl(var(--timestamp))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
