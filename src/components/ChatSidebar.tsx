@@ -1,6 +1,7 @@
 import { Search, MessageCircle, MoreVertical, Users, Phone, Archive } from 'lucide-react';
 import { Chat } from '@/types/chat';
 import { formatDistanceToNow } from 'date-fns';
+import { useState, useMemo } from 'react';
 
 interface ChatSidebarProps {
   chats: Chat[];
@@ -9,6 +10,17 @@ interface ChatSidebarProps {
 }
 
 export const ChatSidebar = ({ chats, selectedChatId, onChatSelect }: ChatSidebarProps) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredChats = useMemo(() => {
+    if (!searchTerm.trim()) return chats;
+    
+    return chats.filter(chat => 
+      chat.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      chat.lastMessage.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [chats, searchTerm]);
+
   const formatTimestamp = (date: Date) => {
     const now = new Date();
     const diff = now.getTime() - date.getTime();
@@ -40,7 +52,7 @@ export const ChatSidebar = ({ chats, selectedChatId, onChatSelect }: ChatSidebar
       <div className="bg-chat-header px-4 py-3 flex items-center justify-between border-b border-border-light">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-whatsapp-green rounded-full flex items-center justify-center">
-            <span className="text-text-light font-medium text-sm">ME</span>
+            <MessageCircle className="w-5 h-5 text-text-light" />
           </div>
           <h1 className="text-foreground font-medium text-lg">WhatsApp</h1>
         </div>
@@ -64,6 +76,8 @@ export const ChatSidebar = ({ chats, selectedChatId, onChatSelect }: ChatSidebar
           <input
             type="text"
             placeholder="Search or start new chat"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2 bg-input-background border border-border rounded-lg text-sm text-foreground placeholder-text-muted focus:outline-none focus:border-whatsapp-green"
           />
         </div>
@@ -71,7 +85,7 @@ export const ChatSidebar = ({ chats, selectedChatId, onChatSelect }: ChatSidebar
 
       {/* Chat List */}
       <div className="flex-1 overflow-y-auto">
-        {chats.map((chat) => (
+        {filteredChats.map((chat) => (
           <div
             key={chat.id}
             className={`flex items-center p-3 hover:bg-hover cursor-pointer border-b border-border-light transition-colors ${
